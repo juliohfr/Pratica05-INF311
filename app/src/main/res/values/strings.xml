@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Pratica5-INF311</string>
+    <string name="nome_do_local">Nome do local:</string>
+    <string name="latitude">Latitude:</string>
+    <string name="longitude">Longitude:</string>
+    <string name="categoria_do_local">Categoria do local:</string>
+    <string name="posicionamento_global">Posicionamento Global</string>
+    <string name="check_in">CHECK-IN</string>
+    <string name="mapa_de_check_in">Mapa de Check-in</string>
+    <string name="gestao_de_check_in">Gestão de Check-in</string>
+    <string name="lugares_mais_visitados">Lugares mais visitados</string>
 </resources>

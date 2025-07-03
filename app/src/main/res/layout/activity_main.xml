@@ -1,57 +1,87 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#303030">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/buttonTimoteo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:onClick="onClickLocation"
-            android:tag="timoteo"
-            android:text="Timóteo" />
-
-        <Button
-            android:id="@+id/buttonVicosa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:onClick="onClickLocation"
-            android:tag="vicosa"
-            android:text="Viçosa" />
-
-        <Button
-            android:id="@+id/buttonDpi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:onClick="onClickLocation"
-            android:tag="dpi"
-            android:text="DPI UFV" />
-    </RelativeLayout>
-
-    <!--    <fragment-->
-    <!--        android:id="@+id/map"-->
-    <!--        android:name="com.google.android.gms.maps.MapFragment"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="0dp"-->
-    <!--        android:layout_weight="1" />-->
-
-    <Button
-        android:id="@+id/buttonActualLocation"
+    <TextView
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/nome_do_local"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="#BDBDBD"
+        android:textSize="18sp"/>
+
+    <AutoCompleteTextView
+        android:id="@+id/localNames"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:completionThreshold="1"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/categoryName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/categoria_do_local"
+        android:textColor="#BDBDBD"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerCategories"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginBottom="30dp"
+        android:background="#424242"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/globalPosition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/posicionamento_global"
+        android:textColor="#BDBDBD"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/latText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/latitude"
+        android:textColor="#BDBDBD"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/longText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/longitude"
+        android:textColor="#BDBDBD"
+        android:textSize="18sp"
+        android:layout_marginBottom="70dp" />
+
+    <Button
+        android:id="@+id/checkInButton"
+        android:layout_width="200dp"
+        android:layout_height="58dp"
         android:layout_gravity="center_horizontal"
-        android:onClick="onClickLocation"
-        android:tag="actualLocation"
-        android:text="Localização" />
+        android:onClick="checkIn"
+        android:text="@string/check_in"
+        android:textColor="#FFFFFF"
+        android:background="#424242"
+        android:textSize="18sp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp" />
 </LinearLayout>
