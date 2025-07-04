@@ -2,25 +2,25 @@
 
     <item
         android:id="@+id/menu_back"
-        android:title="Voltar" />
+        android:title="@string/voltar" />
 
     <item
         android:id="@+id/menu_manage"
-        android:title="Gestão de Check-in" />
+        android:title="@string/gestao_de_check_in" />
 
     <item
         android:id="@+id/menu_report"
-        android:title="Lugares mais visitados" />
+        android:title="@string/lugares_mais_visitados" />
 
     <item
-        android:title="Tipos de Mapa">
+        android:title="@string/tipos_de_mapa">
         <menu>
             <item
                 android:id="@+id/menu_normal_map"
-                android:title="MAPA NORMAL" />
+                android:title="@string/mapa_normal" />
             <item
                 android:id="@+id/menu_hybrid_map"
-                android:title="MAPA HÍBRIDO" />
+                android:title="@string/mapa_hibrido" />
         </menu>
     </item>
 </menu>

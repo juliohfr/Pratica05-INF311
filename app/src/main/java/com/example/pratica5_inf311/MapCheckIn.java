@@ -1,5 +1,6 @@
 package com.example.pratica5_inf311;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -21,6 +22,8 @@ public class MapCheckIn extends AppCompatActivity implements OnMapReadyCallback 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.checkin_map);
+
+        setTitle("MapaCheckIn");
 
         userLat = getIntent().getDoubleExtra("latitude", 0.0);
         userLong = getIntent().getDoubleExtra("longitude", 0.0);
@@ -78,7 +81,8 @@ public class MapCheckIn extends AppCompatActivity implements OnMapReadyCallback 
             finish();
             return true;
         } else if (id == R.id.menu_manage) {
-            //startActivity(new Intent(this, GestaoCheckinActivity.class));
+            Intent it = new Intent(this, CheckInManage.class);
+            startActivity(it);
             return true;
         } else if (id == R.id.menu_report) {
             //startActivity(new Intent(this, RelatorioLocaisActivity.class));

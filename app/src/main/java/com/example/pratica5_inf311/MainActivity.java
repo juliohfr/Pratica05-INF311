@@ -140,7 +140,8 @@ public class MainActivity extends AppCompatActivity {
 
             return true;
         } else if (id == R.id.menu_manage) {
-            Toast.makeText(this, "Gestão de Check-in", Toast.LENGTH_SHORT).show();
+            Intent it = new Intent(this, CheckInManage.class);
+            startActivity(it);
             return true;
         } else if (id == R.id.menu_report) {
             Toast.makeText(this, "Lugares mais visitados", Toast.LENGTH_SHORT).show();

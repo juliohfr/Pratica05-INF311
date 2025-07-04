@@ -9,4 +9,10 @@
     <string name="mapa_de_check_in">Mapa de Check-in</string>
     <string name="gestao_de_check_in">Gestão de Check-in</string>
     <string name="lugares_mais_visitados">Lugares mais visitados</string>
+    <string name="local">Local:</string>
+    <string name="voltar">Voltar</string>
+    <string name="tipos_de_mapa">Tipos de Mapa</string>
+    <string name="mapa_normal">MAPA NORMAL</string>
+    <string name="mapa_hibrido">MAPA HÍBRIDO</string>
+    <string name="excluir">Excluir?</string>
 </resources>
