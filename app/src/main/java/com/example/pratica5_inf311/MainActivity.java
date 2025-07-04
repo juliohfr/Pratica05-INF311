@@ -193,7 +193,9 @@ public class MainActivity extends AppCompatActivity {
 
         cursor.close();
 
+        Intent it = new Intent(this, MainActivity.class);
+        it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(it);
         finish();
-        startActivity(getIntent());
     }
 }
