@@ -1,12 +1,14 @@
 package com.example.pratica5_inf311;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
@@ -132,5 +134,52 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressLint("UnsafeIntentLaunch")
+    public void checkIn(View view){
+        String localName = autoCompleteLocations.getText().toString().trim();
+        String categorie = (String) spinnerCategories.getSelectedItem();
+        String lati = latText.getText().toString().replace("Latitude: ", "").trim();
+        String longi = longText.getText().toString().replace("Longitude: ", "").trim();
+
+        if (localName.isEmpty() || categorie == null || categorie.isEmpty() || lati.isEmpty() || longi.isEmpty()) {
+            Toast.makeText(this, "Preencha todos os campos e aguarde a obtenção da localização!", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        BancoDadosSingleton db = BancoDadosSingleton.getInstance();
+        Cursor cursor = db.rawQuery("SELECT qtdVisitas FROM Checkin WHERE Local = '" + localName + "'");
+
+        if (cursor.moveToFirst()) {
+            int visits = cursor.getInt(0) + 1;
+            ContentValues values = new ContentValues();
+            values.put("qtdVisitas", visits);
+
+            db.atualizar("Checkin", values, "Local = '" + localName + "'");
+            Toast.makeText(this, "Check-in atualizado!", Toast.LENGTH_SHORT).show();
+        } else {
+            Cursor catCursor = db.rawQuery("SELECT idCategoria FROM Categoria WHERE nome = '" + categorie + "'");
+
+            if (catCursor.moveToFirst()) {
+                int categorieId = catCursor.getInt(0);
+
+                ContentValues values = new ContentValues();
+                values.put("Local", localName);
+                values.put("qtdVisitas", 1);
+                values.put("cat", categorieId);
+                values.put("latitude", lati);
+                values.put("longitude", longi);
+
+                db.inserir("Checkin", values);
+                Toast.makeText(this, "Novo check-in adicionado!", Toast.LENGTH_SHORT).show();
+            }
+            catCursor.close();
+        }
+
+        cursor.close();
+
+        finish();
+        startActivity(getIntent());
     }
 }
