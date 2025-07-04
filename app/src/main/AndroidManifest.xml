@@ -25,6 +25,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MapCheckIn" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCkfhnOF2mYJaGiZRags7FUDyi1iO0LPwY" />
     </application>
 
 </manifest>

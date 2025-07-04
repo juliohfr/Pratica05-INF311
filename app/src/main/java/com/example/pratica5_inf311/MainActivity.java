@@ -1,7 +1,10 @@
 package com.example.pratica5_inf311;
 
+import static java.lang.Double.parseDouble;
+
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.location.Location;
@@ -123,7 +126,18 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.menu_map) {
-            Toast.makeText(this, "Mapa de Check-in", Toast.LENGTH_SHORT).show();
+            String latStr = latText.getText().toString().replace("Latitude: ", "").trim();
+            String longStr = longText.getText().toString().replace("Longitude: ", "").trim();
+
+            if (!latStr.isEmpty() && !longStr.isEmpty()) {
+                Intent it = new Intent(this, MapCheckIn.class);
+                it.putExtra("latitude", parseDouble(latStr));
+                it.putExtra("longitude", parseDouble(longStr));
+                startActivity(it);
+            } else {
+                Toast.makeText(this, "Localização ainda não obtida!", Toast.LENGTH_SHORT).show();
+            }
+
             return true;
         } else if (id == R.id.menu_manage) {
             Toast.makeText(this, "Gestão de Check-in", Toast.LENGTH_SHORT).show();
