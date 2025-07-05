@@ -85,7 +85,8 @@ public class MapCheckIn extends AppCompatActivity implements OnMapReadyCallback 
             startActivity(it);
             return true;
         } else if (id == R.id.menu_report) {
-            //startActivity(new Intent(this, RelatorioLocaisActivity.class));
+            Intent it = new Intent(this, CheckInReport.class);
+            startActivity(it);
             return true;
         } else if (id == R.id.menu_normal_map) {
             map.setMapType(GoogleMap.MAP_TYPE_NORMAL);

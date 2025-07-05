@@ -15,4 +15,6 @@
     <string name="mapa_normal">MAPA NORMAL</string>
     <string name="mapa_hibrido">MAPA HÍBRIDO</string>
     <string name="excluir">Excluir?</string>
+    <string name="visitas">Visitas</string>
+    <string name="locais_mais_visitados">Locais mais visitados</string>
 </resources>

@@ -30,6 +30,7 @@
 
         <activity android:name=".MapCheckIn" />
         <activity android:name=".CheckInManage" />
+        <activity android:name=".CheckInReport" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

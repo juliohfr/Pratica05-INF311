@@ -144,7 +144,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(it);
             return true;
         } else if (id == R.id.menu_report) {
-            Toast.makeText(this, "Lugares mais visitados", Toast.LENGTH_SHORT).show();
+            Intent it = new Intent(this, CheckInReport.class);
+            startActivity(it);
             return true;
         }
 
